@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YENNYGAALEANO GY</title>
+  <link rel="icon" href="icono.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== Pantalla de Inicio (Splash) ===================== -->
+  <!-- Sección de bienvenida con logo y loader -->
+  <div id="splash">
+    <img src="logo.png" 
+         alt="YENNY GALEANO LogoS" class="splash-logo">
+    <small class="splash-bottom-right">Home delivery</small>
+    <div class="loader"></div>
+  </div>
+
+  <!-- ===================== Aplicación Principal ===================== -->
+  <div id="main-app" style="display: none;">
+
+    <!-- ========== Encabezado ========== -->
+    <header class="app-header">
+      <div class="header-left">
+        <!-- Logo principal -->
+        <div class="logo-container">
+          <a href="index.html" aria-label="Ir a inicio">
+            <img src="logo.png" alt="YENNY GALEANO Logo" class="button-logo">
+          </a>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <!-- Buscador principal -->
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Buscar..." />
+          <button id="btnClearSearch" class="btn ghost small" aria-label="Limpiar búsqueda">✕</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== Navegación Inferior (Tabs móviles) ========== -->
+    <nav class="bottom-tabs">
+      <button class="tab active" data-tab="home">Inicio</button>
+      <button class="tab" data-tab="restaurants">Toyota</button>
+      <button class="tab" data-tab="markets">Suzuki</button>
+      <button class="tab" data-tab="pharmacy">Chevrolet</button>
+    </nav>
+
+    <!-- ========== Contenido Principal ========== -->
+    <main id="app">
+
+      <!-- ===== Categorías ===== -->
+      <section class="section">
+        <div class="section-title">
+          <h2>Categorías</h2>
+
+        </div>
+        <div id="categoryChips" class="chips"></div>
+      </section>
+
+      <!-- ===== Grid de Comercios ===== -->
+      <section class="section">
+        <div class="section-title">
+          <h2 id="gridTitle">Disponibles</h2>
+        </div>
+        <div id="vendorGrid" class="grid vendors"></div>
+      </section>
+
+      <!-- ===== Vista de Comercio Individual ===== -->
+      <section id="vendorView" class="vendor-view hidden" aria-hidden="true">
+        <div id="vendorHero" class="vendor-hero"></div>
+        <div class="vendor-actions">
+          <div class="vendor-info" id="vendorInfo"></div>
+          <div class="vendor-filters">
+            <input id="vendorSearch" type="search" placeholder="Buscar en esta tienda..." />
+          </div>
+        </div>
+        <div id="productGrid" class="grid products"></div>
+      </section>
+    </main>
+
+    <!-- ========== Modal de Detalle del Vehículo ========== -->
+    <dialog id="productModal" class="modal">
+      <div class="modal-card vehicle-modal">
+        <header class="modal-header">
+          <h3 id="modalTitle">Vehículo</h3>
+          <button class="btn ghost" id="closeVehicleModal" value="cancel" aria-label="Cerrar">✕</button>
+        </header>
+        <div class="modal-body">
+          <div id="vehicleDetail" class="vehicle-detail"></div>
+        </div>
+        <footer class="modal-footer vehicle-actions-footer">
+          <a id="contactWhatsApp" class="btn primary" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="contactCall" class="btn secondary" href="tel:+573163971630">Llamar</a>
+          <a id="contactEmail" class="btn ghost" href="mailto:ventas@yennygaleano.com">Correo</a>
+        </footer>
+      </div>
+    </dialog>
+ </div>
+ <!-- Fin de main-app -->
+
+  <!-- ===================== Scripts ===================== -->
+  <script src="script.js"></script>
+</body>
+</html>
